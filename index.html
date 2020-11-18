@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Stock Price</h1>
+    </header>
+
+    <!-- Container (JM)-->
+    <div class="container">
+        <form id="stock-form" class="input-form">
+            <fieldset class="input">
+                <label for="stacked-stockname">Stock name:<span id="error-Stock" class="error"
+                        style="display: none"></span></label>
+                <input name="stock" id="stacked-stockname" placeholder="Enter the Stock Name" type="text"
+                    autofocus="true" autocomplete="off" />
+                <label for="stacked-stockdate">Date:</label>
+                <input type="text" id="stack-stockdate" name="stkdate" placeholder="mm/dd/yyyy" autocomplete="off" />
+                <button type="submit" value="Submit" class="pure-button p-button">Submit</button>
+
+                <div class="stock-history container"></div>
+                <label for="stock">Stock History</label>
+                <select name="stock" id="stk">
+                    <option value="ibm">IBM</option>
+                    <option value="ge">GE</option>
+                    <option value="msft">MSFT</option>
+                    <option value="amzn">AMZN</option>
+                </select>
+
+            </fieldset>
+        </form>
+
+
+        <!-- Stock prices -->
+        <table class="stock-legend">
+            <tr></tr>
+            <br>
+            <h5 class="error-msg"></h5>
+        </table>
+
+        <!-- Script file (JM) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
