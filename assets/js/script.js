@@ -5,7 +5,7 @@ let apiKey = "&apikey=MYP2P4U87W95DBG6";
 let stockInputEl = document.querySelector("#stacked-stockname");
 let stockDateEl = document.querySelector("#stack-stockdate");
 let stockFormEl = document.querySelector("#stock-form");
-let searchBtnEl = document.querySelector(".stock-history");
+let searchBtnEl = document.querySelector("#stk");
 let errorStockEl = document.querySelector(".error-msg");
 
 
@@ -163,8 +163,9 @@ $("#stack-stockdate").datepicker({
 let formSubmitHistory = function (event) {
     event.preventDefault();
     errorStockEl.textContent = "";
-    let stock = event.target.innerHTML;
-    let currencyChosen = currencyList.value;
+    console.log("Event................................:  ", event);
+    let stock = event.target.value;
+    // let currencyChosen = currencyList.value;
     if (stock) {
         stockInputEl.value = "";
         let today = new Date();
@@ -189,7 +190,7 @@ let formSubmitHistory = function (event) {
         console.log("Date: ", displayDate);
         stkdate = displayDate;
         console.log("stkdate: ", stkdate);
-        getStockUrl(stock, stkdate, currencyChosen);
+        getStockUrl(stock, stkdate);
         stockInputEl.value = "";
         stockDateEl.value = "";
         currencyChosen = "";
@@ -204,26 +205,27 @@ let getSearchHistory = function (update) {
         let retrievedData = localStorage.getItem("StockSearch");
         stkHistoryArr = JSON.parse(retrievedData);
         if (update === 1) {
-            let parent = document.querySelector('.stock-history');
+            let parent = document.querySelector('#stk');
             while (parent.firstChild) {
                 parent.removeChild(parent.firstChild);
             }
-            let priceparent = document.querySelector('.stock-history');
+            let priceparent = document.querySelector('#stk');
             while (priceparent.firstChild) {
                 priceparent.removeChild(priceparent.firstChild);
             }
         }
         let i = 0;
-        let loadSearchEl = document.querySelector('.stock-history');
+        let loadSearchEl = document.querySelector('#stk');
         let searchInput = document.createElement('option');
-        searchInput.classList.add('stock-history-p');                                //right here
+        // searchInput.classList.add('stock-history-p');        
         loadSearchEl.appendChild(searchInput);
-        //searchInput.innerHTML = "Click on search history: ";
+        searchInput.innerHTML = "Select...: ";
         while (i < stkHistoryArr.length) {
             let loadstock = stkHistoryArr[i]
-            let loadstockEl = document.querySelector('.stock-history');
+            let loadstockEl = document.querySelector('#stk');
             let stockInput = document.createElement('option');
-            stockInput.classList.add('btn-hist');
+            stockInput.value = loadstock;
+            // stockInput.classList.add('btn-hist');
             loadstockEl.appendChild(stockInput);
             stockInput.innerHTML = loadstock;
             i++;
@@ -267,4 +269,4 @@ let saveSearchHistory = function (stock) {
 // Call history, stock fetch, stock history (JM)
 getSearchHistory();
 stockFormEl.addEventListener("submit", formSubmitHandler);
-searchBtnEl.addEventListener("click", formSubmitHistory);
+searchBtnEl.addEventListener("change", formSubmitHistory);
