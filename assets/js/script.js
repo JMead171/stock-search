@@ -65,6 +65,7 @@ let getStockUrl = function (stock, stkdate) {
                 stockNameEl.textContent = ""; // Created to remove last stock Prices (BR)
                 stockNameEl.appendChild(stknme);
                 stknme.innerHTML = "Stock: " + upperStock;
+                stknme.style.backgroundColor = "white";
 
                 let stockPriceEl = document.querySelector('.stock-legend');
                 let stkpr = document.createElement('th');
@@ -74,7 +75,7 @@ let getStockUrl = function (stock, stkdate) {
                 dispYYYY = stkdate.slice(0, 4);
                 dispStkDte = dispMM + "/" + dispDD + "/" + dispYYYY;
                 stkpr.innerHTML = "Price Date: " + dispStkDte;
-
+                stkpr.style.backgroundColor = "white";
 
                 displayOpen = data["Time Series (Daily)"][stkdate]["1. open"];
                 displayHigh = data["Time Series (Daily)"][stkdate]["2. high"];
@@ -89,6 +90,7 @@ let getStockUrl = function (stock, stkdate) {
                 stockOpenEl.appendChild(stkopen);
                 // applied method math.round with toFixed to reduce decimals in the value (BR)
                 stkopen.innerHTML = "Open: " + (Math.round(displayOpen)).toFixed(2);
+                stkopen.style.backgroundColor = "white";
 
                 // Show stock high
                 let stockHighEl = document.querySelector('.stock-legend');
@@ -96,6 +98,7 @@ let getStockUrl = function (stock, stkdate) {
                 stockHighEl.appendChild(stkhigh);
                 // applied method math.round with toFixed to reduce decimals in the value (BR)
                 stkhigh.innerHTML = "High: " + (Math.round(displayHigh)).toFixed(2);
+                stkhigh.style.backgroundColor = "white";
 
                 // Show stock low
                 let stockLowEl = document.querySelector('.stock-legend');
@@ -103,6 +106,7 @@ let getStockUrl = function (stock, stkdate) {
                 stockLowEl.appendChild(stklow);
                 // applied method math.round with toFixed to reduce decimals in the value (BR)
                 stklow.innerHTML = "Low: " + (Math.round(displayLow)).toFixed(2);
+                stklow.style.backgroundColor = "white";
 
                 // Show closing stock price
                 let stockCloseEl = document.querySelector('.stock-legend');
@@ -110,12 +114,15 @@ let getStockUrl = function (stock, stkdate) {
                 stockCloseEl.appendChild(stkclose);
                 // applied method math.round with toFixed to reduce decimals in the value (BR)
                 stkclose.innerHTML = "Close: " + (Math.round(displayClose)).toFixed(2);
+                stkclose.style.backgroundColor = "white";
 
                 // Show stock closing price
                 let stockVolumeEl = document.querySelector('.stock-legend');
                 let stkvolume = document.createElement('th');
                 stockVolumeEl.appendChild(stkvolume);
                 stkvolume.innerHTML = "Volume: " + displayVolume;
+                stkvolume.style.backgroundColor = "white";
+
             });
         } else {
             alert("Error: " + response.statusText);
