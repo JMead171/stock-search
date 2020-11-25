@@ -47,8 +47,22 @@ h2 {
     border: none;
 }
 
+.input input{
+    margin: 10px;
+}
+
+.input button {
+    width: 150px;
+    height: 25px;
+    margin: 10px;
+}
+
+.input-form {
+    font-size: 20px;
+    margin: 10px;
+}
+
 .stock-history {
-    /* display: none; */
     text-align: left;
     font-size: 1.0rem;
     background-color:var(--history);
@@ -57,14 +71,6 @@ h2 {
 .stock-history-p {
     display: inline-block;
     color: white;
-    /*color: var(--search);
-    margin:0;
-    padding:2px;
-    text-align: left;
-    font-size: 1.0rem;
-    width: 200px;
-    text-transform: none;
-    background-color:var(--history); */
 }
 
 .btn-hist {
@@ -98,8 +104,13 @@ h2 {
       color: black;
       width: fit-content;
       padding: 10px;
-
+      margin: 10px;
   }
+
+  .stock-legend th {
+    padding: 10px;
+    margin: 10px;
+}
 
 #user-chosen {
     margin: 5px 0;

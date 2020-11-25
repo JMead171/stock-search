@@ -66,6 +66,8 @@ let getStockUrl = function (stock, stkdate) {
                 stockNameEl.appendChild(stknme);
                 stknme.innerHTML = "Stock: " + upperStock;
                 stknme.style.backgroundColor = "white";
+                stknme.style.color = "#2a72f6";
+
 
                 let stockPriceEl = document.querySelector('.stock-legend');
                 let stkpr = document.createElement('th');
