@@ -68,6 +68,28 @@ h2 {
     background-color:var(--history);
     text-transform: uppercase;
 }
+
+.stock-label {
+    margin: 0 0 0 20px;
+}
+
+.p-button {
+    color: #1a4088;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.p-button:hover {
+    background-color: #82aaf3;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+#stk {
+    width: 150px;
+    height: 25px;
+}
+
 .stock-history-p {
     display: inline-block;
     color: white;
@@ -87,7 +109,7 @@ h2 {
     transform: translate(-1px, -1px);
   }
 
-  .btn-hist:hover {
+.btn-hist:hover {
     margin: 0;
     font-size: 1.1rem;
     text-decoration: none;
@@ -98,17 +120,17 @@ h2 {
     transform: translate(-1px, -1px);
   }
 
-  .stock-legend {
-      display: grid;
-      text-align: left;
-      color: black;
-      width: fit-content;
-      padding: 10px;
-      margin: 10px;
-  }
-
-  .stock-legend th {
+.stock-legend {
+    display: grid;
+    text-align: left;
+    color: black;
+    width: fit-content;
     padding: 10px;
+    margin: 10px;
+}
+
+.stock-legend th {
+padding: 10px;
     margin: 10px;
 }
 
