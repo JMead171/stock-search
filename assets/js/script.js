@@ -134,8 +134,26 @@ let getStockUrl = function (stock, stkdate) {
             alert("unable to connect");
         });
 
-
 };
+
+let finNews = () => {
+    fetch("https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list?id=markets", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "00e26da5d4msh20070461cdf2903p10f06djsne3ef9c15568f",
+            "x-rapidapi-host": "bloomberg-market-and-financial-news.p.rapidapi.com"
+        }
+    })
+    .then(response => {
+        response.json().then(function (data) {
+            console.log(data);
+        })
+    })
+    .catch(err => {
+        console.error(err);
+    });
+};
+
 
 // Get stock name from input (JM)
 let formSubmitHandler = function (event) {
@@ -277,5 +295,6 @@ let saveSearchHistory = function (stock) {
 
 // Call history, stock fetch, stock history (JM)
 getSearchHistory();
+finNews();
 stockFormEl.addEventListener("submit", formSubmitHandler);
 searchBtnEl.addEventListener("change", formSubmitHistory);
