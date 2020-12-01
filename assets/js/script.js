@@ -147,11 +147,20 @@ let finNews = () => {
     .then(response => {
         response.json().then(function (data) {
             console.log(data);
+            displayNews = data["modules"]["0"]["stories"]["0"].title;
+
+            let newsEl = document.querySelector('.fin-news');
+            let dispNews = document.createElement('p');
+            newsEl.appendChild(dispNews);
+            dispNews.innerHTML = displayNews
+            // dispNews.style.backgroundColor = "white";
         })
     })
     .catch(err => {
         console.error(err);
     });
+
+
 };
 
 

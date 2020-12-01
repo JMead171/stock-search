@@ -134,6 +134,14 @@ padding: 10px;
     margin: 10px;
 }
 
+.stock-news {
+    display: inline-block;
+}
+
+.fin-news {
+    color: white
+}
+
 footer {
     /* position: relative;
     min-height: 60vh; */
