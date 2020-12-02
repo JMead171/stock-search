@@ -135,7 +135,7 @@ padding: 10px;
 }
 
 .stock-news {
-    display: inline-block;
+    display: flex;
 }
 
 .fin-news {

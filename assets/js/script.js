@@ -148,12 +148,24 @@ let finNews = () => {
         response.json().then(function (data) {
             console.log(data);
             displayNews = data["modules"]["0"]["stories"]["0"].title;
-
             let newsEl = document.querySelector('.fin-news');
             let dispNews = document.createElement('p');
             newsEl.appendChild(dispNews);
             dispNews.innerHTML = displayNews
-            // dispNews.style.backgroundColor = "white";
+
+            newsImage = data["modules"]["0"]["stories"]["0"].image;
+            let imageEl = document.querySelector('.fin-news');
+            let dispImage = document.createElement('img');
+            imageEl.appendChild(dispImage);
+            dispImage.src = newsImage;
+          
+            newsUrl = data["modules"]["0"]["stories"]["0"].longURL;
+            let urlEl = document.querySelector('.fin-news');
+            let dispUrl = document.createElement('a');
+            urlEl.appendChild(dispUrl);
+            dispUrl.href = newsUrl;
+            dispUrl.textContent = "Click ot read article";
+
         })
     })
     .catch(err => {
