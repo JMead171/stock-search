@@ -164,7 +164,7 @@ let finNews = () => {
             let dispUrl = document.createElement('a');
             urlEl.appendChild(dispUrl);
             dispUrl.href = newsUrl;
-            dispUrl.textContent = "Click ot read article";
+            dispUrl.textContent = "Click to read article";
 
         })
     })
@@ -317,5 +317,6 @@ let saveSearchHistory = function (stock) {
 // Call history, stock fetch, stock history (JM)
 getSearchHistory();
 finNews();
+
 stockFormEl.addEventListener("submit", formSubmitHandler);
 searchBtnEl.addEventListener("change", formSubmitHistory);
