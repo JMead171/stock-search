@@ -172,7 +172,56 @@ let finNews = () => {
         console.error(err);
     });
 
+};
 
+let stockMktIndex = () => {
+    fetch("https://financialmodelingprep.com/api/v3/quote/%5EGSPC,%5EDJI,%5EIXIC?apikey=2301f75afa78fc52aa6f76d1208a3425", {
+        "method": "GET"
+    })
+    .then(response => {
+        response.json().then(function (data) {
+            console.log("stock indexes: ", data);
+        })
+    })
+};
+
+
+// Get intial stock 
+let initialStock = function () {
+    let today = new Date();
+    let mm = ("0" + (today.getMonth() + 1)).slice(-2)
+    let dd = ("0" + today.getDate()).slice(-2);
+    let yyyy = today.getFullYear();
+    console.log("FB - before switch: ", mm, dd, yyyy);
+    // New code to check if date valid
+    switch (new Date().getDay()) {
+        case 0:
+            dd = dd - 2;
+            break;
+        case 1:
+            dd = dd - 3;
+            break;
+        default:
+            dd = dd - 1;
+    }
+    if (dd < 10) dd = '0' + dd;
+    console.log("FB - After switch: ", mm, dd, yyyy);
+
+    displayDate = yyyy + "-" + mm + "-" + dd;
+    console.log("FB - Date: ", displayDate);
+    errorStockEl.textContent = "";
+    let stock = "FB";
+    let stkdate = displayDate;
+    console.log(stock, stkdate);
+    if (stock && stkdate) {
+        getStockUrl(stock, stkdate);
+        stockInputEl.value = "";
+        stockDateEl.value = "";
+    } else {
+        errorStockEl.textContent = "";
+        errorStockEl.textContent = "PLEASE ENTER A VALID STOCK CODE AND SELECT A DATE";
+        errorStockEl.style.display = "block";
+    }
 };
 
 
@@ -232,6 +281,7 @@ let formSubmitHistory = function (event) {
             default:
                 dd = dd - 1;
         }
+        if (dd < 10) dd = '0' + dd;
         console.log("After switch: ", mm, dd, yyyy);
 
         displayDate = yyyy + "-" + mm + "-" + dd;
@@ -275,7 +325,7 @@ let getSearchHistory = function (update) {
             stockInput.value = loadstock;
             // stockInput.classList.add('btn-hist');
             loadstockEl.appendChild(stockInput);
-            stockInput.innerHTML = loadstock;
+            stockInput.innerHTML = loadstock.toUpperCase();
             i++;
         }
     } else {
@@ -316,6 +366,8 @@ let saveSearchHistory = function (stock) {
 
 // Call history, stock fetch, stock history (JM)
 getSearchHistory();
+initialStock();
+stockMktIndex();
 finNews();
 
 stockFormEl.addEventListener("submit", formSubmitHandler);
