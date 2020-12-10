@@ -181,6 +181,22 @@ let stockMktIndex = () => {
     .then(response => {
         response.json().then(function (data) {
             console.log("stock indexes: ", data);
+            let dowEl = document.querySelector('.fin-index');
+            let dispDow = document.createElement('p');
+            dowEl.appendChild(dispDow);
+            dispDow.innerHTML = "DOW Jones"
+
+            let displayDow = data["0"].price;
+            let dowpEl = document.querySelector('.fin-index');
+            let dispDowp = document.createElement('p');
+            dowpEl.appendChild(dispDowp);
+            dispDowp.innerHTML = displayDow;
+
+            let displayDowChg = data["0"].change;
+            let dowchgEl = document.querySelector('.fin-index');
+            let dispDowChg = document.createElement('p');
+            dowchgEl.appendChild(dispDowChg);
+            dispDowChg.innerHTML = displayDowChg;
         })
     })
 };

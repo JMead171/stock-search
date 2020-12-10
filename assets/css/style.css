@@ -30,14 +30,18 @@ header {
 
 h2 {
     margin: 0;
-    font-size: 18px;
+    text-align: left;
+}
+
+h3 {
+    margin: 0 5px 0 5px;
     text-align: left;
 }
 
 .container {
     color: var(--secondary);
     display: inline;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     border-bottom: 10px;
     padding: 0;
@@ -58,7 +62,7 @@ h2 {
 }
 
 .input-form {
-    font-size: 20px;
+    font-size: 24px;
     margin: 10px;
 }
 
@@ -134,8 +138,20 @@ h2 {
     margin: 10px;
 }
 
+.stock-title {
+    display: grid;
+    text-align: left;
+    color: white;
+    width: fit-content;
+}
+
 .stock-news {
     display: flex;
+}
+
+.fin-index p {
+    display: inline-block;
+    color: white;
 }
 
 .fin-news {
@@ -171,7 +187,7 @@ footer {
     height: 2.5rem; 
 }
 
-footer h2 {
+footer h4 {
     display: inline-block;
     color: #82a2df;
     margin: 10px;
