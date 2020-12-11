@@ -61,7 +61,7 @@ let getStockUrl = function (stock, stkdate) {
                 let upperStock = displayStock.toUpperCase();
 
                 let stockNameEl = document.querySelector('.stock-legend');
-                let stknme = document.createElement('th');
+                let stknme = document.createElement('p');
                 stockNameEl.textContent = ""; // Created to remove last stock Prices (BR)
                 stockNameEl.appendChild(stknme);
                 stknme.innerHTML = "Stock: " + upperStock;
@@ -70,7 +70,7 @@ let getStockUrl = function (stock, stkdate) {
 
 
                 let stockPriceEl = document.querySelector('.stock-legend');
-                let stkpr = document.createElement('th');
+                let stkpr = document.createElement('p');
                 stockPriceEl.appendChild(stkpr);
                 dispMM = stkdate.slice(5, 7);
                 dispDD = stkdate.slice(8, 10);
@@ -88,7 +88,7 @@ let getStockUrl = function (stock, stkdate) {
 
                 // Show stock open price
                 let stockOpenEl = document.querySelector('.stock-legend');
-                let stkopen = document.createElement('th');
+                let stkopen = document.createElement('p');
                 stockOpenEl.appendChild(stkopen);
                 // applied method math.round with toFixed to reduce decimals in the value (BR)
                 stkopen.innerHTML = "Open: " + (Math.round(displayOpen)).toFixed(2);
@@ -96,7 +96,7 @@ let getStockUrl = function (stock, stkdate) {
 
                 // Show stock high
                 let stockHighEl = document.querySelector('.stock-legend');
-                let stkhigh = document.createElement('th');
+                let stkhigh = document.createElement('p');
                 stockHighEl.appendChild(stkhigh);
                 // applied method math.round with toFixed to reduce decimals in the value (BR)
                 stkhigh.innerHTML = "High: " + (Math.round(displayHigh)).toFixed(2);
@@ -104,7 +104,7 @@ let getStockUrl = function (stock, stkdate) {
 
                 // Show stock low
                 let stockLowEl = document.querySelector('.stock-legend');
-                let stklow = document.createElement('th');
+                let stklow = document.createElement('p');
                 stockLowEl.appendChild(stklow);
                 // applied method math.round with toFixed to reduce decimals in the value (BR)
                 stklow.innerHTML = "Low: " + (Math.round(displayLow)).toFixed(2);
@@ -112,7 +112,7 @@ let getStockUrl = function (stock, stkdate) {
 
                 // Show closing stock price
                 let stockCloseEl = document.querySelector('.stock-legend');
-                let stkclose = document.createElement('th');
+                let stkclose = document.createElement('p');
                 stockCloseEl.appendChild(stkclose);
                 // applied method math.round with toFixed to reduce decimals in the value (BR)
                 stkclose.innerHTML = "Close: " + (Math.round(displayClose)).toFixed(2);
@@ -120,7 +120,7 @@ let getStockUrl = function (stock, stkdate) {
 
                 // Show stock closing price
                 let stockVolumeEl = document.querySelector('.stock-legend');
-                let stkvolume = document.createElement('th');
+                let stkvolume = document.createElement('p');
                 stockVolumeEl.appendChild(stkvolume);
                 stkvolume.innerHTML = "Volume: " + displayVolume;
                 stkvolume.style.backgroundColor = "white";
@@ -181,6 +181,8 @@ let stockMktIndex = () => {
     .then(response => {
         response.json().then(function (data) {
             console.log("stock indexes: ", data);
+
+            // Dow Jones
             let dowEl = document.querySelector('.fin-index');
             let dispDow = document.createElement('p');
             dowEl.appendChild(dispDow);
@@ -197,6 +199,52 @@ let stockMktIndex = () => {
             let dispDowChg = document.createElement('p');
             dowchgEl.appendChild(dispDowChg);
             dispDowChg.innerHTML = displayDowChg;
+
+            let breakEl = document.querySelector('.fin-index');
+            let brEl = document.createElement('br');
+            breakEl.appendChild(brEl);
+
+
+            // S&P 500
+            let sandpEl = document.querySelector('.fin-index');
+            let dispSP = document.createElement('p');
+            sandpEl.appendChild(dispSP);
+            dispSP.innerHTML = "S&P 500"
+
+            let displaySP = data["1"].price;
+            let sppEl = document.querySelector('.fin-index');
+            let dispspp = document.createElement('p');
+            sppEl.appendChild(dispspp);
+            dispspp.innerHTML = displaySP;
+
+            let displaySPChg = data["1"].change;
+            let spchgEl = document.querySelector('.fin-index');
+            let dispspChg = document.createElement('p');
+            spchgEl.appendChild(dispspChg);
+            dispspChg.innerHTML = displaySPChg;
+
+            let break2El = document.querySelector('.fin-index');
+            let br2El = document.createElement('br');
+            break2El.appendChild(br2El);
+
+            // NASDAQ
+            let nasEl = document.querySelector('.fin-index');
+            let dispNas = document.createElement('p');
+            nasEl.appendChild(dispNas);
+            dispNas.innerHTML = "NASDAQ"
+
+            let displayNasp = data["1"].price;
+            let naspEl = document.querySelector('.fin-index');
+            let dispnasp = document.createElement('p');
+            naspEl.appendChild(dispnasp);
+            dispnasp.innerHTML = displayNasp;
+
+            let displayNasChg = data["1"].change;
+            let naschgEl = document.querySelector('.fin-index');
+            let dispNasChg = document.createElement('p');
+            naschgEl.appendChild(dispNasChg);
+            dispNasChg.innerHTML = displayNasChg;
+
         })
     })
 };
