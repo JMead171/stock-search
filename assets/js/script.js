@@ -187,18 +187,29 @@ let stockMktIndex = () => {
             let dispDow = document.createElement('p');
             dowEl.appendChild(dispDow);
             dispDow.innerHTML = "DOW Jones"
+            dispDow.style.width = "120px"
+
 
             let displayDow = data["0"].price;
             let dowpEl = document.querySelector('.fin-index');
             let dispDowp = document.createElement('p');
             dowpEl.appendChild(dispDowp);
             dispDowp.innerHTML = displayDow;
+            dispDowp.style.width = "85px"
+
 
             let displayDowChg = data["0"].change;
             let dowchgEl = document.querySelector('.fin-index');
             let dispDowChg = document.createElement('p');
             dowchgEl.appendChild(dispDowChg);
             dispDowChg.innerHTML = displayDowChg;
+
+            if (displayDowChg > 0) {
+                dispDowChg.style.color = "lightgreen";
+            };
+            if (displayDowChg < 0) {
+                dispDowChg.style.color = "red";
+            };
 
             let breakEl = document.querySelector('.fin-index');
             let brEl = document.createElement('br');
@@ -210,12 +221,15 @@ let stockMktIndex = () => {
             let dispSP = document.createElement('p');
             sandpEl.appendChild(dispSP);
             dispSP.innerHTML = "S&P 500"
+            dispSP.style.width = "120px"
 
             let displaySP = data["1"].price;
             let sppEl = document.querySelector('.fin-index');
             let dispspp = document.createElement('p');
             sppEl.appendChild(dispspp);
             dispspp.innerHTML = displaySP;
+            dispspp.style.width = "85px"
+
 
             let displaySPChg = data["1"].change;
             let spchgEl = document.querySelector('.fin-index');
@@ -223,27 +237,46 @@ let stockMktIndex = () => {
             spchgEl.appendChild(dispspChg);
             dispspChg.innerHTML = displaySPChg;
 
+            if (displaySPChg > 0) {
+                dispspChg.style.color = "lightgreen";
+            };
+            if (displaySPChg < 0) {
+                dispspChg.style.color = "red";
+            };
+
             let break2El = document.querySelector('.fin-index');
             let br2El = document.createElement('br');
             break2El.appendChild(br2El);
 
+            
             // NASDAQ
             let nasEl = document.querySelector('.fin-index');
             let dispNas = document.createElement('p');
             nasEl.appendChild(dispNas);
             dispNas.innerHTML = "NASDAQ"
+            dispNas.style.width = "120px"
+
 
             let displayNasp = data["1"].price;
             let naspEl = document.querySelector('.fin-index');
             let dispnasp = document.createElement('p');
             naspEl.appendChild(dispnasp);
             dispnasp.innerHTML = displayNasp;
+            dispnasp.style.width = "85px"
+
 
             let displayNasChg = data["1"].change;
             let naschgEl = document.querySelector('.fin-index');
             let dispNasChg = document.createElement('p');
             naschgEl.appendChild(dispNasChg);
             dispNasChg.innerHTML = displayNasChg;
+
+            if (displayNasChg > 0) {
+                dispNasChg.style.color = "lightgreen";
+            };
+            if (displayNasChg < 0) {
+                dispNasChg.style.color = "red";
+            };
 
         })
     })

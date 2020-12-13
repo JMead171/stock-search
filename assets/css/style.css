@@ -192,9 +192,9 @@ footer {
 }
 
 .footer-container {
-    position: absolute;
-    bottom: 0;
-    height: 2.5rem; 
+    margin-top: auto;
+    /* bottom: 0;
+    height: 2.5rem;  */
 }
 
 footer h4 {
