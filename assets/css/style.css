@@ -11,7 +11,8 @@
 }
 
 body, html {
-    height: 95%;
+    height: 100%;
+    margin: 0 0 20px;
     font-family: Arial, Helvetica, sans-serif;
     background-size: 20%;
     background-color: black;
@@ -186,17 +187,6 @@ h3 {
     color: palevioletred;
 }
 
-footer {
-    display: flex;
-    justify-content: space-around;
-}
-
-.footer-container {
-    margin-top: auto;
-    /* bottom: 0;
-    height: 2.5rem;  */
-}
-
 footer h4 {
     display: inline-block;
     color: #82a2df;
@@ -204,6 +194,10 @@ footer h4 {
 }
 
 footer form {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
     display: inline-block;
     margin: 0 0 0 25px;
 }
@@ -218,4 +212,137 @@ footer form {
 .error-msg {
     color: red;
     margin-left: 10px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .stock-history {
+        display: block;
+        width: 100%;
+    }
+
+    .stock-label {
+        margin: 0;
+    }
+
+    footer h4 {
+        display: block;
+        width: 100%;
+    }
+
+    .stock-news {
+        font-size: 16px;
+        margin: 120px 10px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    #stock-form  {
+        font-size: 16px;
+    }
+
+    .input-form  {
+        font-size: 16px;
+    }
+
+    .input button {
+        width: 100px;
+    }
+
+    .stock-news {
+        font-size: 16px;
+        margin: 100px 10px;
+    }
+
+    .fin-index p {
+        margin: 10px 0;
+    }
+
+    .stock-legend {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .fin-news p {
+        width: 200px;
+        margin: 10px;
+    
+    }
+    
+    .fin-news img {
+        width: 200px;
+        height: 225px;
+        margin: 10px;
+    }
+    
+    .fin-news a {
+        margin: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 540px) {
+    #stock-form  {
+        font-size: 12px;
+    }
+
+    .input-form  {
+        font-size: 12px;
+    }
+
+    .input-form input  {
+        font-size: 12px;
+        width: 100px;
+    }
+
+    .input button {
+        width: 100px;
+        height: 20px;
+        font-size: 11px;
+    }
+
+    #stk {
+        width: 100px;
+        height: 20px;
+        margin: 10px 5px;
+    }
+
+    .stock-news {
+        font-size: 12px;
+        margin: 50px 5px;
+    }
+
+    .fin-index p {
+        margin: 10px 0;
+    }
+
+    .stock-legend {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .fin-news p {
+        width: 1500px;
+        margin: 10px;
+    }
+    
+    .fin-news img {
+        width: 100px;
+        height: 200px;
+        margin: 10px;
+    }
+    
+    .fin-news a {
+        margin: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 425px) {
+
+}
+
+@media only screen and (max-width: 280px) {
+ 
 }
