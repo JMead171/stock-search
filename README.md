@@ -18,8 +18,7 @@ This project displays Stock prices
 
 
 # Screen Shot
-![image](https://user-images.githubusercontent.com/64744763/101819412-396f6e00-3af3-11eb-9383-3f9144024462.png)
-
+![image](https://user-images.githubusercontent.com/64744763/102388988-872b2100-3fa0-11eb-86d6-f7dfc9df7ffe.png)
 
 # Technology Used
 HTML, CSS, JavaScript, JQuery, Moment, Three APIs 

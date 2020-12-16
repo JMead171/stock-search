@@ -323,13 +323,12 @@ footer form {
     }
 
     .fin-news p {
-        width: 1500px;
+        width: 150px;
         margin: 10px;
     }
     
     .fin-news img {
-        width: 100px;
-        height: 200px;
+        height: 150px;
         margin: 10px;
     }
     
@@ -340,7 +339,92 @@ footer form {
 }
 
 @media only screen and (max-width: 425px) {
+    #stock-form  {
+        font-size: 12px;
+    }
 
+    .input-form  {
+        display: block;
+        font-size: 12px;
+    }
+
+    .input {
+        text-align: center;
+    }
+
+    .input-form input  {
+        font-size: 12px;
+        width: 100px;
+    }
+
+    .input button {
+        width: 325px;
+        height: 20px;
+        font-size: 11px;
+    }
+
+    #stk {
+        width: 100px;
+        height: 20px;
+        margin: 10px 5px;
+        display: none;
+    }
+
+    .stock-label {
+        display: none;
+    }
+
+    .stock-news {
+        display: block;
+        font-size: 12px;
+        margin: 0 5px;
+        text-align: center;
+    }
+
+    .stock-news h3 {
+        text-align: center;
+    }
+
+    .stock-title {
+        text-align: center;
+        width: unset;
+    }
+
+    .fin-index p {
+        margin: 10px 0;
+    }
+
+    .stock-legend {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .fin-news p {
+        display: block;
+        width: 100%;
+    }
+    
+    .fin-news img {
+        height: 150px;
+        margin: 10px;
+    }
+    
+    .fin-news a {
+        margin: 10px;
+    }
+
+    footer form {
+        font-size: 12px;
+        position: unset;
+        margin:unset;
+    }
+    footer input {
+        width: 150px;
+        font-size: 12px;
+        position: unset;
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 @media only screen and (max-width: 280px) {
