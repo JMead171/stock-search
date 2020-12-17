@@ -127,6 +127,9 @@ h3 {
     transform: translate(-1px, -1px);
   }
 
+h3 {
+    color: #82a2df;
+  }
 .stock-legend {
     display: inline-block;
     text-align: left;
@@ -143,7 +146,6 @@ h3 {
 .stock-title {
     display: grid;
     text-align: left;
-    color: white;
     width: fit-content;
 }
 
@@ -340,7 +342,7 @@ footer form {
 
 @media only screen and (max-width: 425px) {
     #stock-form  {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .input-form  {
@@ -352,13 +354,15 @@ footer form {
         text-align: center;
     }
 
-    .input-form input  {
+     .input-form input  {
         font-size: 12px;
         width: 100px;
+        margin: 10px auto;
+        display: block;
     }
 
     .input button {
-        width: 325px;
+        width: 100px;
         height: 20px;
         font-size: 11px;
     }
@@ -423,10 +427,6 @@ footer form {
         font-size: 12px;
         position: unset;
         display: block;
-        margin: 0 auto;
+        margin: 5px auto;
     }
-}
-
-@media only screen and (max-width: 280px) {
- 
 }
