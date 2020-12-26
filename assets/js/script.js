@@ -24,12 +24,12 @@ let getStockUrl = function (stock, stkdate) {
                 // This is undefined error check on stock api array
                 if (!data.hasOwnProperty("Meta Data")) {
                     errorStockEl.textContent = "";
-                    errorStockEl.textContent = "PLEASE ENTER A VALID STOCK CODE AND SELECT A DATE";
+                    errorStockEl.textContent = "Please enter a valid stock symbol and a valid date.  ** holidays are not valid dates **";
                     errorStockEl.style.display = "block";
                     return;
                 } else if (!data["Meta Data"].hasOwnProperty("2. Symbol")) {
                     errorStockEl.textContent = "";
-                    errorStockEl.textContent = "PLEASE ENTER A VALID STOCK CODE AND SELECT A DATE";
+                    errorStockEl.textContent = "Please enter a valid stock symbol and a valid date.  ** holidays are not valid dates **";
                     errorStockEl.style.display = "block";
                     return;
                 } else {
@@ -41,12 +41,12 @@ let getStockUrl = function (stock, stkdate) {
                 // This is undefined error check on date api array
                 if (!data.hasOwnProperty("Time Series (Daily)")) {
                     errorStockEl.textContent = "";
-                    errorStockEl.textContent = "PLEASE ENTER A VALID STOCK CODE AND SELECT A DATE";
+                    errorStockEl.textContent = "Please enter a valid stock symbol and a valid date.  ** holidays are not valid dates **";
                     errorStockEl.style.display = "block";
                     return;
                 } else if (!data["Time Series (Daily)"].hasOwnProperty(stkdate)) {
                     errorStockEl.textContent = "";
-                    errorStockEl.textContent = "PLEASE ENTER A VALID STOCK CODE AND SELECT A DATE";
+                    errorStockEl.textContent = "Please enter a valid stock symbol and a valid date.  ** holidays are not valid dates **";
                     errorStockEl.style.display = "block";
                     return;
                 } else {
@@ -316,7 +316,7 @@ let initialStock = function () {
         stockDateEl.value = "";
     } else {
         errorStockEl.textContent = "";
-        errorStockEl.textContent = "PLEASE ENTER A VALID STOCK CODE AND SELECT A DATE";
+        errorStockEl.textContent = "Please enter a valid stock symbol and a valid date.  ** holidays are not valid dates **";
         errorStockEl.style.display = "block";
     }
 };
@@ -335,7 +335,7 @@ let formSubmitHandler = function (event) {
         stockDateEl.value = "";
     } else {
         errorStockEl.textContent = "";
-        errorStockEl.textContent = "PLEASE ENTER A VALID STOCK CODE AND SELECT A DATE";
+        errorStockEl.textContent = "Please enter a valid stock symbol and a valid date.  ** holidays are not valid dates **";
         errorStockEl.style.display = "block";
     }
 };

@@ -212,7 +212,7 @@ footer form {
 }
 
 .error-msg {
-    color: red;
+    color: rgb(255, 95, 95);
     margin-left: 10px;
 }
 
